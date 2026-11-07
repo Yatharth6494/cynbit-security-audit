@@ -1,0 +1,330 @@
+{
+  "target": "https://www.cynbit.in/",
+  "finalUrl": "https://www.cynbit.in/",
+  "scannedAt": "2026-11-07T14:20:37.146Z",
+  "status": 200,
+  "summary": {
+    "score": 35,
+    "grade": "F",
+    "counts": {
+      "critical": 0,
+      "high": 1,
+      "medium": 3,
+      "low": 7,
+      "info": 0
+    },
+    "total": 11
+  },
+  "checks": [
+    {
+      "name": "HSTS",
+      "status": "warn",
+      "detail": "missing includeSubDomains"
+    },
+    {
+      "name": "CSP",
+      "status": "fail",
+      "detail": "missing"
+    },
+    {
+      "name": "Frame protection",
+      "status": "fail",
+      "detail": "missing"
+    },
+    {
+      "name": "nosniff",
+      "status": "fail",
+      "detail": "missing"
+    },
+    {
+      "name": "Referrer-Policy",
+      "status": "fail",
+      "detail": "missing"
+    },
+    {
+      "name": "Permissions-Policy",
+      "status": "fail",
+      "detail": "missing"
+    },
+    {
+      "name": "CORS",
+      "status": "warn",
+      "detail": "wildcard"
+    },
+    {
+      "name": "Server banner",
+      "status": "info",
+      "detail": "Vercel"
+    },
+    {
+      "name": "Source maps",
+      "status": "pass",
+      "detail": "HTTP 403"
+    },
+    {
+      "name": "security.txt",
+      "status": "fail",
+      "detail": "HTTP 404"
+    },
+    {
+      "name": "robots.txt",
+      "status": "warn",
+      "detail": "/api/, /admin/, /portal/"
+    },
+    {
+      "name": "TLS version",
+      "status": "pass",
+      "detail": "TLSv1.3"
+    },
+    {
+      "name": "TLS certificate",
+      "status": "pass",
+      "detail": "46 days remaining"
+    },
+    {
+      "name": "HTTP to HTTPS",
+      "status": "pass",
+      "detail": "308 -> https://www.cynbit.in/"
+    },
+    {
+      "name": "Static cache",
+      "status": "pass",
+      "detail": "public,max-age=31536000,immutable"
+    },
+    {
+      "name": "Static cache",
+      "status": "pass",
+      "detail": "public,max-age=31536000,immutable"
+    },
+    {
+      "name": "Static cache",
+      "status": "pass",
+      "detail": "public,max-age=31536000,immutable"
+    }
+  ],
+  "findings": [
+    {
+      "id": "HSTS-002",
+      "title": "HSTS does not cover subdomains",
+      "severity": "low",
+      "category": "Transport",
+      "evidence": "Strict-Transport-Security: max-age=63072000",
+      "impact": "Subdomains such as the intern portal can be downgraded or stripped independently.",
+      "recommendation": "Add includeSubDomains and preload after auditing all subdomains."
+    },
+    {
+      "id": "CSP-001",
+      "title": "Content-Security-Policy is not set",
+      "severity": "high",
+      "category": "Browser hardening",
+      "evidence": "No Content-Security-Policy response header on HTML documents.",
+      "impact": "Any injected or compromised third-party script can execute freely, read the DOM, and exfiltrate credentials or payment state.",
+      "recommendation": "Deploy a nonce-based CSP with strict-dynamic, object-src 'none', base-uri 'self', and frame-ancestors 'none'. Roll out in report-only mode first."
+    },
+    {
+      "id": "XFO-001",
+      "title": "No clickjacking protection",
+      "severity": "medium",
+      "category": "Browser hardening",
+      "evidence": "Neither X-Frame-Options nor CSP frame-ancestors is present.",
+      "impact": "Attackers can overlay the site in a frame to capture clicks or credentials.",
+      "recommendation": "Set frame-ancestors 'none' and X-Frame-Options: DENY."
+    },
+    {
+      "id": "MIME-001",
+      "title": "X-Content-Type-Options is missing",
+      "severity": "low",
+      "category": "Browser hardening",
+      "evidence": "No X-Content-Type-Options: nosniff header.",
+      "impact": "Browsers may MIME-sniff responses and execute content as a different type.",
+      "recommendation": "Send X-Content-Type-Options: nosniff on every response."
+    },
+    {
+      "id": "REF-001",
+      "title": "Referrer-Policy is missing",
+      "severity": "medium",
+      "category": "Browser hardening",
+      "evidence": "No Referrer-Policy response header.",
+      "impact": "Sensitive URL parameters, including payment or reset tokens, can leak to third parties via the Referer header.",
+      "recommendation": "Send Referrer-Policy: strict-origin-when-cross-origin, and no-referrer on token-bearing return and reset pages."
+    },
+    {
+      "id": "PERM-001",
+      "title": "Permissions-Policy is missing",
+      "severity": "low",
+      "category": "Browser hardening",
+      "evidence": "No Permissions-Policy response header.",
+      "impact": "Powerful browser features remain available to embedded or injected code.",
+      "recommendation": "Disable features the site does not use, for example camera=(), microphone=(), geolocation=(), payment=(), usb=()."
+    },
+    {
+      "id": "COOP-001",
+      "title": "Cross-Origin-Opener-Policy is missing",
+      "severity": "low",
+      "category": "Browser hardening",
+      "evidence": "No Cross-Origin-Opener-Policy response header.",
+      "impact": "Cross-window attacks and Spectre-style isolation gaps are more likely.",
+      "recommendation": "Send Cross-Origin-Opener-Policy: same-origin on documents."
+    },
+    {
+      "id": "CORP-001",
+      "title": "Cross-Origin-Resource-Policy is missing",
+      "severity": "low",
+      "category": "Browser hardening",
+      "evidence": "No Cross-Origin-Resource-Policy response header.",
+      "impact": "Other sites can embed resources in ways that enable side-channel or data-leak attacks.",
+      "recommendation": "Send Cross-Origin-Resource-Policy: same-origin (or same-site where needed)."
+    },
+    {
+      "id": "CORS-002",
+      "title": "Wildcard Access-Control-Allow-Origin",
+      "severity": "medium",
+      "category": "API",
+      "evidence": "Access-Control-Allow-Origin: * on a document response.",
+      "impact": "Cross-origin scripts can read the response. If the same policy is applied to JSON or server actions, it becomes a data exposure.",
+      "recommendation": "Remove CORS headers from document routes and use an explicit origin allowlist for APIs."
+    },
+    {
+      "id": "DISC-001",
+      "title": "No vulnerability disclosure policy",
+      "severity": "low",
+      "category": "Governance",
+      "evidence": "/.well-known/security.txt returned HTTP 404.",
+      "impact": "Researchers have no safe, documented way to report vulnerabilities, increasing the chance of public disclosure or extortion.",
+      "recommendation": "Publish /.well-known/security.txt with Contact, Expires, Preferred-Languages, and a disclosure policy."
+    },
+    {
+      "id": "ROBOTS-001",
+      "title": "robots.txt advertises sensitive application paths",
+      "severity": "low",
+      "category": "Information disclosure",
+      "evidence": "Disallow entries: /api/, /admin/, /portal/",
+      "impact": "robots.txt is public and is not an access control. Listing private paths helps attackers prioritize targets.",
+      "recommendation": "Remove private path names from robots.txt and enforce authentication and authorization at the edge and in the application."
+    }
+  ],
+  "files": [
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "url": "https://www.cynbit.in/robots.txt"
+    },
+    {
+      "path": "/.well-known/security.txt",
+      "status": 404,
+      "url": "https://www.cynbit.in/.well-known/security.txt"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "url": "https://www.cynbit.in/sitemap.xml"
+    },
+    {
+      "path": "/.well-known/change-password",
+      "status": 404,
+      "url": "https://www.cynbit.in/.well-known/change-password"
+    }
+  ],
+  "tls": {
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_128_GCM_SHA256",
+    "cert": {
+      "subject": "CN=www.cynbit.in",
+      "issuer": "CN=YR2, O=Let's Encrypt",
+      "validFrom": "Sep 25 04:47:44 2026 GMT",
+      "validTo": "Dec 24 04:47:43 2026 GMT",
+      "subjectAltName": "DNS:www.cynbit.in"
+    }
+  },
+  "httpRedirect": {
+    "status": 308,
+    "location": "https://www.cynbit.in/"
+  },
+  "performance": {
+    "ttfbMs": 482,
+    "totalMs": 499,
+    "documentBytes": 100660,
+    "contentLength": null,
+    "contentEncoding": "br",
+    "edgeCache": "HIT",
+    "scriptCount": 16,
+    "styleCount": 2,
+    "assets": [
+      {
+        "url": "https://www.cynbit.in/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+        "status": 200,
+        "contentLength": null,
+        "contentEncoding": "br",
+        "cacheControl": "public,max-age=31536000,immutable",
+        "edgeCache": "HIT"
+      },
+      {
+        "url": "https://www.cynbit.in/_next/static/chunks/1255-eae4096fb21f1304.js",
+        "status": 200,
+        "contentLength": null,
+        "contentEncoding": "br",
+        "cacheControl": "public,max-age=31536000,immutable",
+        "edgeCache": "HIT"
+      },
+      {
+        "url": "https://www.cynbit.in/_next/static/css/554053b5a71e6342.css",
+        "status": 200,
+        "contentLength": null,
+        "contentEncoding": "br",
+        "cacheControl": "public,max-age=31536000,immutable",
+        "edgeCache": "HIT"
+      }
+    ]
+  },
+  "observations": {
+    "server": "Vercel",
+    "acao": "*"
+  },
+  "requestLog": [
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js.map",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/robots.txt",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/.well-known/security.txt",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/sitemap.xml",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/.well-known/change-password",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/_next/static/chunks/4bd1b696-100b9d70ed4e49c1.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/_next/static/chunks/1255-eae4096fb21f1304.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://www.cynbit.in/_next/static/css/554053b5a71e6342.css",
+      "status": 200
+    }
+  ]
+}

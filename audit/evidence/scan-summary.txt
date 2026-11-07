@@ -1,0 +1,26 @@
+Passive posture report for https://www.cynbit.in/
+Scanned: 2026-11-07T14:20:37.146Z
+Score: 35/100 (grade F) | findings: 11
+
+[HIGH] CSP-001 Content-Security-Policy is not set
+  No Content-Security-Policy response header on HTML documents.
+[MEDIUM] CORS-002 Wildcard Access-Control-Allow-Origin
+  Access-Control-Allow-Origin: * on a document response.
+[MEDIUM] REF-001 Referrer-Policy is missing
+  No Referrer-Policy response header.
+[MEDIUM] XFO-001 No clickjacking protection
+  Neither X-Frame-Options nor CSP frame-ancestors is present.
+[LOW] COOP-001 Cross-Origin-Opener-Policy is missing
+  No Cross-Origin-Opener-Policy response header.
+[LOW] CORP-001 Cross-Origin-Resource-Policy is missing
+  No Cross-Origin-Resource-Policy response header.
+[LOW] DISC-001 No vulnerability disclosure policy
+  /.well-known/security.txt returned HTTP 404.
+[LOW] HSTS-002 HSTS does not cover subdomains
+  Strict-Transport-Security: max-age=63072000
+[LOW] MIME-001 X-Content-Type-Options is missing
+  No X-Content-Type-Options: nosniff header.
+[LOW] PERM-001 Permissions-Policy is missing
+  No Permissions-Policy response header.
+[LOW] ROBOTS-001 robots.txt advertises sensitive application paths
+  Disallow entries: /api/, /admin/, /portal/

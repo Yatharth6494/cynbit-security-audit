@@ -1,0 +1,38 @@
+== A www ==
+e12d688042344235.vercel-dns-017.com.
+64.29.17.1
+216.198.79.1
+== A apex ==
+216.198.79.1
+== CNAME www ==
+e12d688042344235.vercel-dns-017.com.
+== NS ==
+ns33.domaincontrol.com.
+ns34.domaincontrol.com.
+== MX ==
+0 cynbit-in.mail.protection.outlook.com.
+== TXT apex ==
+"google-site-verification=HlFN-XoAM8jcNR4FStVSkoxPoA_q78YrXiRGwNjDHwQ"
+"v=spf1 include:secureserver.net -all"
+"NETORG20603639.onmicrosoft.com"
+"google-site-verification=SUGzGG8ggu0KHqJ3k5CGDi8jn4fIbdiLuC5onyPuC9U"
+== TXT _dmarc ==
+"v=DMARC1; p=none;"
+== TXT resend._domainkey ==
+"p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDmQvwrEz89AIheAPpaifab91yy7umlVk3n23oITYijuLWJvYz9XUGl64VeiaO2uWuG4K9rIX6iYXIRU0+3hOOiZN72MIWrHc4nUISKdv3MqdmeRK8SMmWJTcjaBPn66FFmo8aBal1e6ZdJiBtmjvTCDbmiCcYSflxc6BLnvZ3f5wIDAQAB"
+== TXT send SPF ==
+"v=spf1 include:dc-fd741b8612._spfm.send.cynbit.in ~all"
+== MX send ==
+10 feedback-smtp.ap-northeast-1.amazonses.com.
+== selector1 DKIM ==
+== selector2 DKIM ==
+== CAA apex ==
+== CAA www ==
+e12d688042344235.vercel-dns-017.com.
+0 issue "globalsign.com"
+0 issue "letsencrypt.org"
+0 issue "pki.goog"
+0 issue "sectigo.com"
+== MTA-STS ==
+== TLS-RPT ==
+== DNSSEC DNSKEY ==

@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run security regression tests
+        run: npm test
+      - name: Run end-to-end demo
+        run: npm run demo
+      - name: Syntax check
+        run: |
+          node --check src/scanner/index.mjs
+          node --check src/hardening/server.mjs
+          node --check scripts/demo.mjs
+
+  examples:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/nextjs
+    env:
+      DATABASE_URL: postgresql://user:password@localhost:5432/cynbit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: examples/nextjs/package-lock.json
+      - name: Install reference dependencies
+        run: npm ci --ignore-scripts
+      - name: Generate Prisma client
+        run: npx prisma generate
+      - name: Typecheck reference
+        run: npm run typecheck
+      - name: Audit reference dependencies
+        run: npm audit --audit-level=high

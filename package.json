@@ -1,0 +1,17 @@
+{
+  "name": "cynbit-security-audit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Passive security audit of publicly accessible Cynbit properties plus a working hardening reference implementation.",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "scan": "node src/scanner/index.mjs",
+    "scan:cynbit": "node src/scanner/index.mjs https://www.cynbit.in --out audit/evidence",
+    "demo": "node scripts/demo.mjs",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

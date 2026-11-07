@@ -1,0 +1,111 @@
+== GET https://www.cynbit.in/ ==
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 173818
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline
+content-type: text/html; charset=utf-8
+date: Sat, 07 Nov 2026 14:21:28 GMT
+etag: "d863a7180f4bc2de99a8ba103c535616"
+server: Vercel
+strict-transport-security: max-age=63072000
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+x-matched-path: /
+x-nextjs-prerender: 1
+x-nextjs-stale-time: 300
+x-vercel-cache: HIT
+x-vercel-id: bom1::g9n4r-1794061288200-f8e8bd199f48
+content-length: 100660
+
+
+== GET https://www.cynbit.in/contact ==
+HTTP/2 200 
+age: 81405
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+date: Thu, 05 Nov 2026 15:28:43 GMT
+etag: "x56vj4awkl1ded"
+server: Vercel
+strict-transport-security: max-age=63072000
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+x-matched-path: /contact
+x-nextjs-prerender: 1
+x-nextjs-stale-time: 300
+x-powered-by: Next.js
+x-vercel-cache: HIT
+x-vercel-id: bom1::iad1::5jhbh-1794061288658-cfbdfa3aba66
+content-length: 64026
+
+
+== GET https://www.cynbit.in/nonexistent-audit-probe ==
+HTTP/2 404 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 171733
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="404"
+content-type: text/html; charset=utf-8
+date: Sat, 07 Nov 2026 14:21:29 GMT
+etag: "362e44e20f0560b15bfb8bff3817a6cb"
+last-modified: Thu, 05 Nov 2026 14:39:15 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-matched-path: /404
+x-next-error-status: 404
+x-vercel-cache: HIT
+x-vercel-id: bom1::v2gql-1794061289101-b2b93ea9509d
+content-length: 15072
+
+
+== GET https://www.cynbit.in/robots.txt ==
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 171360
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="robots.txt"
+content-type: text/plain; charset=utf-8
+date: Sat, 07 Nov 2026 14:21:29 GMT
+etag: "2660121f048542cf7a5e603ba53f72c2"
+last-modified: Thu, 05 Nov 2026 14:45:29 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-matched-path: /robots.txt
+x-vercel-cache: HIT
+x-vercel-id: bom1::txsvv-1794061289481-efe621d4627f
+content-length: 200
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://cynbit.in/sitemap.xml
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Disallow specific non-SEO pages
+Disallow: /api/
+Disallow: /admin/
+Disallow: /portal/
+
+== GET https://www.cynbit.in/.well-known/security.txt ==
+HTTP/2 404 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 171734
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="404"
+content-type: text/html; charset=utf-8
+date: Sat, 07 Nov 2026 14:21:29 GMT
+etag: "362e44e20f0560b15bfb8bff3817a6cb"
+last-modified: Thu, 05 Nov 2026 14:39:15 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-matched-path: /404
+x-next-error-status: 404
+x-vercel-cache: HIT
+x-vercel-id: bom1::bzk7b-1794061289841-20341b9bdc32
+content-length: 15072
+

@@ -1,0 +1,37 @@
+== GET https://bitelevate.cynbit.in/login ==
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 69836
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline
+content-type: text/html; charset=utf-8
+date: Sat, 07 Nov 2026 14:21:30 GMT
+etag: "51feaf1217b251ce76f57ca9e4b457ec"
+server: Vercel
+strict-transport-security: max-age=63072000
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+x-matched-path: /intern-portal/login
+x-nextjs-prerender: 1
+x-nextjs-stale-time: 300
+x-vercel-cache: HIT
+x-vercel-id: bom1::7g4gg-1794061290220-deec8098cdcc
+content-length: 16887
+
+
+== GET https://bitelevate.cynbit.in/ ==
+HTTP/2 307 
+age: 0
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+date: Sat, 07 Nov 2026 14:21:30 GMT
+link: </_next/static/media/636a5ac981f94f8b-s.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/media/8760c4774489e4ba-s.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2"
+location: /intern-portal/login
+server: Vercel
+strict-transport-security: max-age=63072000
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+x-matched-path: /intern-portal
+x-powered-by: Next.js
+x-vercel-cache: MISS
+x-vercel-id: bom1::iad1::ldgx9-1794061290608-ccbeda4d93da
+

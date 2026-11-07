@@ -1,0 +1,36 @@
+== www.cynbit.in:443 ==
+subject=CN = www.cynbit.in
+issuer=C = US, O = Let's Encrypt, CN = YR2
+notBefore=Sep 25 04:47:44 2026 GMT
+notAfter=Dec 24 04:47:43 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.cynbit.in
+
+== cynbit.in:443 ==
+subject=CN = cynbit.in
+issuer=C = US, O = Let's Encrypt, CN = YR2
+notBefore=Sep 26 16:19:30 2026 GMT
+notAfter=Dec 25 16:19:29 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:cynbit.in
+
+== bitelevate.cynbit.in:443 ==
+subject=CN = bitelevate.cynbit.in
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct  9 17:58:10 2026 GMT
+notAfter=Jan  7 17:58:09 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:bitelevate.cynbit.in
+
+== TLS version negotiation ==
+New, TLSv1.3, Cipher is TLS_AES_128_GCM_SHA256
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_128_GCM_SHA256
+
+== TLS 1.1 probe ==
+0096D60E01000000:error:0A00042E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:ssl/record/rec_layer_s3.c:1605:SSL alert number 70
+    Protocol  : TLSv1.1
+
+== TLS 1.0 probe ==
+00F6770C01000000:error:0A00042E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:ssl/record/rec_layer_s3.c:1605:SSL alert number 70
+    Protocol  : TLSv1
